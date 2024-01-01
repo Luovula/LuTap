@@ -1,4 +1,31 @@
 @import "_colors";
+@import "mixins";
+@import "./layout/layouts";
+@import "./pages/App";
+@import "./pages/Home";
+@import "./pages/AboutMe";
+@import "./pages/Events";
+@import "./components/Footer";
+
+// font-family: 'Abhaya Libre', serif;
+// font-family: 'Inclusive Sans', sans-serif;
+// font-family: 'Noto Sans TC', sans-serif;
+// font-family: 'Noto Serif TC', serif;
+// font-family: 'Ruluko', sans-serif;
+
 body {
   display: block !important;
+}
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+body[lang="en"] {
+  font-family: "Ruluko", "Arial", sans-serif;
+}
+
+body[lang="zh"] * {
+  font-family: "Noto Serif TC", serif !important;
 }

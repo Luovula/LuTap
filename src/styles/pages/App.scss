@@ -1,0 +1,49 @@
+.AppFrame {
+  .AppBar {
+    background-color: $light-pink;
+    color: $primary-pastel;
+
+    .Container {
+      max-width: 100%;
+      .LogoBox a {
+        .LogoImg {
+          width: 36px;
+          margin-right: 12px;
+          margin-top: 7px;
+          font-weight: 800;
+        }
+      }
+
+      .Title a {
+        font-family: "Abhaya Libre", serif !important;
+        font-size: 36px;
+        color: $primary-pastel;
+      }
+      .OpenMenu a {
+        color: $primary-pastel;
+
+        margin-bottom: 10px;
+        &:hover {
+          color: $darker-pastel;
+        }
+      }
+      .TapBtn {
+        background-color: $light-gold;
+        color: $light-pastel;
+        padding: 5px 10px;
+        box-shadow: 1px 1px 5px rgb(209, 208, 208);
+        &:hover {
+          background-color: $light-pastel;
+          color: $light-gold;
+        }
+      }
+    }
+  }
+  &.NavItem a {
+    color: $primary-pastel;
+    font-family: "Inclusive Sans", sans-serif;
+    &:hover {
+      color: $darker-pastel;
+    }
+  }
+}
