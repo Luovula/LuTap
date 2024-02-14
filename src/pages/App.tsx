@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../styles/main.scss";
 import {
   AppBar,
@@ -13,20 +13,19 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../assets/Logo.png";
-import LanguageIcon from "@mui/icons-material/Language";
-import { useTranslation } from "react-i18next";
+// import LanguageIcon from "@mui/icons-material/Language";
+// import { useTranslation } from "react-i18next";
 import { Outlet, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { useScrollPosition } from "../hooks";
+// import { useScrollPosition } from "../hooks";
 
 function App() {
   const location = useLocation();
-  const scrollTop = useScrollPosition();
+  // const scrollTop = useScrollPosition();
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [isReelOpen, setIsReelOpen]= useState<boolean>(false);
   const nav = ["Home", "AboutMe", "Events"];
@@ -183,7 +182,7 @@ function App() {
           Reel
         </DialogTitle>
         <DialogContent className="DlgContent">
-        <iframe width="366" height="651" src="https://www.youtube.com/embed/Iz66PQcRmis" title="LuTap promo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="366" height="651" src="https://www.youtube.com/embed/Iz66PQcRmis" title="LuTap promo" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         </DialogContent>
         <DialogActions>
         </DialogActions>
