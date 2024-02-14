@@ -5,7 +5,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Photo from "/src/assets/ProfilePic.png";
+// import Photo from "/src/assets/ProfilePic.png";
 import { useWindowSize } from "../hooks";
 
 const AboutMe: React.FC = () => {
@@ -14,7 +14,7 @@ const AboutMe: React.FC = () => {
   return (
     <Box className="AboutMePage">
       <Box className="Intro">
-      {width<750&&<Box className='Centered' width={'100%'}><Box className="SinglePic Centered"><img  src={Photo}></img></Box></Box>}
+      {width<750&&<Box className='Centered' width={'100%'}><Box className="SinglePic Centered"><img  src={""}></img></Box></Box>}
         <Box className='Main'>
           <Box>
             <Box className="T1">Luna Luovula</Box>
@@ -27,7 +27,7 @@ const AboutMe: React.FC = () => {
               intertwined with jazz music.
             </Box>
           </Box>
-          {width>750&&<img src={Photo}></img>}
+          {width>750&&<img src={""}></img>}
         </Box>
        
         <br />
