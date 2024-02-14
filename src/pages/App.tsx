@@ -15,13 +15,21 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../assets/Logo.png";
 import LanguageIcon from "@mui/icons-material/Language";
 import { useTranslation } from "react-i18next";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import { useScrollPosition } from "../hooks";
 
 function App() {
+  const location = useLocation();
+  const scrollTop = useScrollPosition();
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-
-  const nav = ["AboutMe", "Events"];
+  const [isReelOpen, setIsReelOpen]= useState<boolean>(false);
+  const nav = ["Home", "AboutMe", "Events"];
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -31,8 +39,22 @@ function App() {
     setAnchorElNav(null);
   };
 
+  const handleReelDlg =()=>{
+    setIsReelOpen(!isReelOpen);
+  }
+
+  const getPageLocationForRoute = (pathname: string): string => {
+    // Remove leading slash and replace any remaining slashes with dashes
+    // Also convert to lowercase
+    const className = pathname.substring(1).replace(/\//g, "-").toLowerCase();
+    return className || "home"; // Default to 'Home' if no path
+  };
+
+  // Determine the class name for the current route
+  const pageLocation = getPageLocationForRoute(location.pathname);
+
   return (
-    <Box className="AppFrame">
+    <Box className={`AppFrame ${pageLocation}`}>
       <AppBar position="absolute" className="AppBar">
         <Container className="Container">
           <Toolbar disableGutters>
@@ -93,7 +115,7 @@ function App() {
                 {nav.map((page, idx) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Box className="AppFrame NavItem">
-                      <Link to={nav[idx]}>{page}</Link>
+                      <Link to={idx === 0 ? "/" : nav[idx]}>{page}</Link>
                     </Box>
                   </MenuItem>
                 ))}
@@ -133,19 +155,39 @@ function App() {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, display: "block" }}
                 >
-                  <Link to={nav[idx]}>{page}</Link>
+                  <Link to={idx === 0 ? "/" : nav[idx]}>{page}</Link>
                 </Button>
               ))}
             </Box>
 
-            <Box sx={{ flexGrow: 0 }}>
-              <Button className="TapBtn" onClick={() => {}} sx={{ p: 0 }}>
-                {"TapMe"}
-              </Button>
-            </Box>
+            {true ? (
+              <Box sx={{ flexGrow: 0 }}>
+                <Button className="TapBtn" onClick={() => {handleReelDlg()}} sx={{ p: 0 }}>
+                  {"TapMe"}
+                </Button>
+              </Box>
+            ) : (
+              <Box sx={{ flexGrow: 0 }} width={50} height={5}></Box>
+            )}
           </Toolbar>
         </Container>
       </AppBar>
+
+      <Dialog
+        open={isReelOpen}
+        onClose={handleReelDlg}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          Reel
+        </DialogTitle>
+        <DialogContent className="DlgContent">
+        <iframe width="366" height="651" src="https://www.youtube.com/embed/Iz66PQcRmis" title="LuTap promo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </DialogContent>
+        <DialogActions>
+        </DialogActions>
+      </Dialog>
       <Outlet />
     </Box>
   );

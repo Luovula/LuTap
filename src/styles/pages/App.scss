@@ -46,4 +46,16 @@
       color: $darker-pastel;
     }
   }
+  &.home .AppBar {
+    background-color: transparent;
+    color: white;
+    box-shadow: none;
+
+    .Container .Title a {
+      color: white;
+    }
+  }
+  .DlgContent{
+    padding: 0;
+  }
 }
