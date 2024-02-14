@@ -1,9 +1,17 @@
 .HomePage {
   @include Page;
+  overflow-x: hidden;
+  padding-top: 0px;
+
   .Banner {
-    width: 100vw;
     height: auto;
+    width: 100%;
+    &.Expanded {
+      height: 100vh;
+      width: auto;
+    }
   }
+
   .TagBox {
     z-index: 100;
     width: 100vw;
@@ -19,32 +27,6 @@
       margin-left: 18px;
     }
   }
-  .NewsBanner {
-    margin-top: -13px;
-    background-color: $light-pastel;
-    width: calc(100vw - 20px);
-    height: 75px;
-    display: flex;
-    flex-direction: row;
-    color: white;
-    padding: 5px 10px;
-    padding-top: 10px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    .Name {
-      font-size: 20px;
-      font-family: "Abhaya Libre", serif;
-      font-weight: 700;
-      margin-right: 15px;
-      padding-top: 3px;
-      line-height: 20px;
-    }
-    .Info {
-      display: flex;
-      flex-direction: column;
-      font-size: 14px;
-    }
-  }
   .Intro {
     box-sizing: border-box;
     font-family: "Inclusive Sans", sans-serif;
@@ -52,15 +34,22 @@
     padding: 35px 22px;
     text-align: center;
   }
-  .Reel {
-    @include Centered;
-    width: 100%;
-    .File {
-      width: 300px;
-      height: 250px;
-      background-color: rgb(215, 215, 215);
-      text-align: center;
+
+  .SignUp,
+  .Collab {
+    width: 300px;
+    height: 60px;
+    background-color: $primary-pastel;
+    text-align: center;
+    color: white;
+
+    &:hover {
+      background-color: $secondary-gold;
+      color: $primary-pastel;
     }
+  }
+  .Collab{
+    margin-bottom: 50px;
   }
   .SubIntro {
     box-sizing: border-box;
@@ -70,3 +59,30 @@
     text-align: center;
   }
 }
+
+// .NewsBanner {
+//   margin-top: -13px;
+//   background-color: $light-pastel;
+//   width: calc(100vw - 20px);
+//   height: 75px;
+//   display: flex;
+//   flex-direction: row;
+//   color: white;
+//   padding: 5px 10px;
+//   padding-top: 10px;
+//   box-sizing: border-box;
+//   border-radius: 10px;
+//   .Name {
+//     font-size: 20px;
+//     font-family: "Abhaya Libre", serif;
+//     font-weight: 700;
+//     margin-right: 15px;
+//     padding-top: 3px;
+//     line-height: 20px;
+//   }
+//   .Info {
+//     display: flex;
+//     flex-direction: column;
+//     font-size: 14px;
+//   }
+// }
