@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 const Events: React.FC = () => {
   return (
     <Box className="EventsPage">
-      <Footer />
+      To Be Announced
     </Box>
   );
 };
