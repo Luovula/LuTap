@@ -27,7 +27,7 @@ const AboutMe: React.FC = () => {
               intertwined with jazz music.
             </Box>
           </Box>
-          {width>750&&<img src={"Photo"}></img>}
+          {width>750&&<img src={Photo}></img>}
         </Box>
        
         <br />
