@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
-import ExpandedBanner from "../assets/ExpandedBanner.jpg";
+import ExpandedBanner from "../assets/ExpandedBanner.webp";
 import Banner from "../assets/Banner.webp";
 import Footer from "../components/Footer";
 import { useWindowSize } from "../hooks";
@@ -13,7 +13,8 @@ const Home: React.FC = () => {
     <Box className="HomePage">
       <img
         className={`Banner ${width < 800 ? "Expanded" : ""}`}
-        src={width < 800 ? ExpandedBanner : Banner}
+        src={width===0?Banner:width < 800 ? ExpandedBanner : Banner}
+        height='600' width='400'
         alt="Banner"
       />
       {/* <Box className="TagBox">
