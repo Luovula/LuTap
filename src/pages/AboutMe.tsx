@@ -43,37 +43,44 @@ const AboutMe: React.FC = () => {
           <AccordionDetails>
             <Box className="Content">
               Luna's tap dance journey is a tapestry woven with the wisdom of
-              legends and diverse educational experiences: Protege of Reggio
-              "The Hoofer" McLaughlin: Luna had the privilege of learning from
-              Reggio, a legendary figure in the world of tap. Under his
-              mentorship, she delved deep into the art's rich history and
-              traditions.
+              legends and diverse educational experiences: 
+            </Box>
+            <br />
+            <Box className="T3">Protege of Reggio "The Hoofer" McLaughlin:</Box>
+            <Box className="Content">
+            When only 14 years old, Luna had the privilege of travelling to Chicago and learning from
+            Reggio, a legendary figure in the world of tap. Under his
+            mentorship, she delved deep into the art's rich history and
+            traditions such as the basic steps and routines of The Copasetics.
             </Box>
             <br />
             <Box className="T3">Barcelona Professional Training:</Box>
             <Box className="Content">
-              Her education took her to Barcelona, where she underwent
-              professional training under the guidance of Guillem Alonso at the
+              Her education took her to Barcelona, where she underwent a
+              professional training program under the guidance of Guillem Alonso at the
               Escola Luthier Musica y Danca, further enriching her tap dance
               repertoire.
             </Box>
             <br />
             <Box className="T3"> Jimmy Slyde Institute: </Box>
             <Box className="Content">
-              Luna also studied tap dance at the famous Jimmy Slyde Institute,
-              taught by Roxane Butterfly while in Barcelona. This added a unique
-              dimension to her tap dance journey. Music Department at Helsinki
-              University of Arts Sibelius Academy: Luna's passion for music led
-              her to the Music Department at Helsinki University of Arts
-              Sibelius Academy, where she explored the rhythmic intricacies that
-              connect tap dance and music.
+              While in Barcelona, Luna also studied tap dance at the famous Jimmy Slyde Institute,
+              taught by Roxane Butterfly. The spiritual environment and vast library of Jimmy Slyde Institute, rich in footage and history
+              of tap dance allowed Luna to explore her own identity and expression in a culturally aware context.
+            </Box>  
+            <br />
+            <Box className="T3"> Music department at Helsinki University of Arts Sibelius Academy: </Box>
+            <Box className="Content">
+              Luna's passion for music led her to the Music Department at Helsinki University of Arts
+              Sibelius Academy, where she explored the connection between tap dance and music. Jazz rhythms, history of jazz music,
+              and piano accompaniment.
             </Box>
             <br />
             <Box className="T3">Orff Music Pedagogy Certified Course: </Box>
             <Box className="Content">
               Luna's dedication to understanding rhythm led her to pursue an
               Orff music pedagogy certified course, enhancing her knowledge of
-              musicality and rhythm.
+              teaching musicality through movement.
             </Box>
             <br />
             <Box className="T3"> Continued Learning in Taipei:</Box>
@@ -86,8 +93,12 @@ const AboutMe: React.FC = () => {
             <Box className="T3">Performing with Tap Radio: </Box>
             <Box className="Content">
               Luna's rhythmic journey has also seen her perform with Tap Radio
-              all around Taiwan, captivating audiences with her extraordinary
-              tap dancing skills and onstage charisma. Training at Broadway
+              all around Taiwan, captivating audiences with her tap dancing skills and onstage charisma. 
+            </Box>
+            <br />  
+            <Box className="T3"> Tap dance studies in improvisation: </Box>
+            <Box className="Content">
+              Training at Broadway
               Dance Center and Steps on Broadway in New York with the
               multitalented Jared Grimes, Cirque Du Soleil tap dancer Joseph
               Wiggan and Derick K Grant the producer of Imagine Tap. Throughout
@@ -165,7 +176,7 @@ const AboutMe: React.FC = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Box className="Content">
-              Luna's tap dance brilliance has graced prestigious festivals
+              Luna's tap dance has graced prestigious festivals
               worldwide, including:
               <br />
               <ul>
@@ -187,20 +198,19 @@ const AboutMe: React.FC = () => {
               including but not limited to:
               <ul>
                 <li>
-                  Henry Le Tang Style: Guided by Jeremy Kiesman and Lance Pong.
+                  Henry Le Tang Style: Traditional routines from Jeremy Kiesman and Lance Pong.
                 </li>
                 <li>
-                  Eddie Brown Style: Learning routines and scientific rhythm
+                  Eddie Brown Style: Traditional routines and scientific rhythm
                   from Heather Cornell.
                 </li>
                 <li>
-                  Leon Collins Style: learning from Dianne Walker and Barbara
-                  Duffy the melodic.
+                  Leon Collins Style: Traditional routines from Dianne Walker and Barbara Duffy.
                 </li>
                 <li>
-                  Four Step Brothers Style: Mastered under the tutelage of
-                  Robert L. Reed.
+                  Four Step Brothers Style: Traditional routines and steps from Robert L. Reed.
                 </li>
+                <li>LaVaughn Robinson style: Traditional routines from Robert F. Burden Jr. and Huang Yuching</li>
                 <li>Relaxed technique: Sam Weber</li>
                 <li>
                   Present-day technique and style with Dormeshia Sumbry-Edwards,
