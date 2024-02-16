@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
-import ExpandedBanner from "../assets/ExpandedBanner.webp";
-import Banner from "../assets/Banner.webp";
+import ExpandedBanner from "../assets/ExpandedBanner.jpg";
+import Banner from "../assets/Banner.jpg";
 import Footer from "../components/Footer";
 import { useWindowSize } from "../hooks";
 
