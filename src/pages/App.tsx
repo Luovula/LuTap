@@ -62,7 +62,7 @@ function App() {
               sx={{ display: { xs: "none", md: "flex" } }}
             >
               <Link to="/">
-                <img src={Logo} alt="Logo" className="LogoImg" />
+                <img src={Logo} alt="Logo" className="LogoImg" width='36' height='auto'/>
               </Link>
             </Box>
             <Typography
