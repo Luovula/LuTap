@@ -4,7 +4,7 @@ import ExpandedBanner from "../assets/ExpandedBanner.webp";
 import Banner from "../assets/Banner.webp";
 import Footer from "../components/Footer";
 import { useWindowSize } from "../hooks";
-import { collection, getDoc, doc } from 'firebase/firestore';
+import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 
 const Home: React.FC = () => {
