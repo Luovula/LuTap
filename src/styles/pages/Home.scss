@@ -3,19 +3,22 @@
   overflow-x: hidden;
   padding-top: 0px;
   position: relative;
-  .BannerBox{
+
+  .BannerBox {
     position: relative;
     margin-bottom: 20px;
 
     .Banner {
       height: auto;
       width: 100%;
+
       &.Expanded {
         height: 100vh;
         width: auto;
       }
     }
-    .OverText{
+
+    .OverText {
       position: absolute;
       top: 265px;
       left: 110px;
@@ -25,11 +28,98 @@
       text-align: left;
       font-family: "Abhaya Libre", serif;
 
-      &.SmallerScreen{
-       display: none;
+      &.SmallerScreen {
+        display: none;
       }
     }
   }
+
+  .TagBox {
+    z-index: 110;
+    width: 70%;
+    height: 25px;
+    margin-top: -80px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 0px;
+
+    .UpcomingEventsTag {
+      background-color: $primary-gold;
+      box-shadow: 3px 3px 3px gray;
+      border-radius: 20px;
+      height: 25px;
+      color: white;
+      width: 150px;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .NewsBanner {
+    margin-top: -5px;
+    background-color: $light-pastel;
+    width: 70%;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    box-sizing: border-box;
+    border-radius: 10px;
+    z-index: 100;
+    justify-content: space-between;
+    align-items: center;
+
+    .SideContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: end;
+    }
+
+    .Name {
+      font-size: 20px;
+      font-family: "Abhaya Libre", serif;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: $darker-pastel;
+      padding-right: 30px;
+    }
+
+    .Info {
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .Title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .Details {
+      margin-bottom: 10px;
+
+      .DetailItem {
+        margin-left: 20px;
+        /* Additional styles if needed */
+      }
+    }
+
+    .Link {
+      color: $primary-pastel;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
   .News {
     box-sizing: border-box;
     font-family: "Inclusive Sans", sans-serif;
@@ -37,37 +127,62 @@
     padding: 35px 0;
     text-align: left;
     border-bottom: 1px solid $transparent-pink;
-    
-    .Title{
+
+    .Title {
       font-size: 20px;
       font-weight: 800;
+      margin-bottom: 10px;
     }
-    .Content{
+
+    .Content {
       padding: 10px 20px;
       background-color: $light-pastel;
       border-radius: 20px;
       margin: 10px 0;
     }
-    .EventFooter{
+
+    .EventFooter {
       text-align: right;
       font-size: 14px;
+      margin-top: 10px;
+
+      .Link {
+        color: $primary-pastel;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
+
+  .CustomButton {
+    background-color: $light-gold;
+    color: black;
+    padding: 10px 15px;
+    font-size: 20px;
+
+    &:hover {
+      background-color: $darker-pastel;
+      color: white;
+    }
+  }
+
   .Collab {
     width: 300px;
     height: 60px;
     background-color: $primary-pastel;
     text-align: center;
     color: white;
+    margin-bottom: 50px;
 
     &:hover {
       background-color: $secondary-gold;
       color: $primary-pastel;
     }
   }
-  .Collab{
-    margin-bottom: 50px;
-  }
+
   .SubIntro {
     box-sizing: border-box;
     font-family: "Inclusive Sans", sans-serif;
@@ -75,52 +190,33 @@
     padding: 35px 0;
     text-align: center;
   }
+
+  @media (max-width: 800px) {
+    .BannerBox {
+      .OverText {
+        display: none;
+      }
+    }
+
+    .NewsBanner,
+    .News {
+      width: 90%;
+    }
+
+    .TagBox {
+      width: 90%;
+      margin-top: 10px;
+    }
+
+    .Collab {
+      width: 80%;
+      height: 50px;
+    }
+
+    .SubIntro {
+      width: 90%;
+      padding: 20px 0;
+      font-size: 16px;
+    }
+  }
 }
-
- .NewsBanner {
-   margin-top: -15px;
-   background-color: $light-pastel;
-   width: 70%;
-   height: 75px;
-   display: flex;
-   flex-direction: row;
-   color: white;
-   padding: 5px 10px;
-   padding-top: 10px;
-   box-sizing: border-box;
-   border-radius: 10px;
-   z-index: 100;
-   .Name {
-     font-size: 20px;
-     font-family: "Abhaya Libre", serif;
-     font-weight: 700;
-     margin-right: 15px;
-     padding-top: 3px;
-     line-height: 20px;
-   }
-   .Info {
-     display: flex;
-     flex-direction: column;
-     font-size: 14px;
-   }
- }
-
- .TagBox {
-   z-index: 110;
-   width: 70%;
-   height: 15px;
-   margin-top: -35px;
-   display: flex;
-   justify-content: flex-start;
-   margin-left: 0px;
-   .TagBox {
-    z-index: 110;
-     background-color: $primary-gold;
-     box-shadow: 3px 3px 3px gray;
-     border-radius: 20px;
-     height: 25px;
-     color: white;
-     width: 150px;
-     padding-left: 20px;
-   }
- }

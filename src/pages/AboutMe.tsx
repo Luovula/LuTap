@@ -1,5 +1,5 @@
-import React from "react";
-import { Box, Button } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Button, CircularProgress } from "@mui/material";
 import Footer from "../components/Footer";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -7,14 +7,36 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Photo from "/src/assets/ProfilePic.jpg";
 import { useWindowSize } from "../hooks";
+import { storage } from '../../firebase-config'
+import { ref, getDownloadURL } from 'firebase/storage';
 
 const AboutMe: React.FC = () => {
   const { width } = useWindowSize();
 
+  const [loading, setLoading] = useState<boolean>(false);
+
+
+  const handlePortfolioClick = async () => {
+    setLoading(true);
+    try {
+      const pdfRef = ref(storage, 'Luna_Luovula_CV.pdf');
+
+      const url = await getDownloadURL(pdfRef);
+      console.log('url, url')
+
+      window.open(url, '_blank');
+    } catch (err: any) {
+      console.error('Error fetching PDF:', err);
+      alert('Failed to load the portfolio. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <Box className="AboutMePage">
       <Box className="Intro">
-      {width<750&&<Box className='Centered' width={'100%'}><Box className="SinglePic Centered"><img  src={Photo}></img></Box></Box>}
+        {width < 750 && <Box className='Centered' width={'100%'}><Box className="SinglePic Centered"><img src={Photo}></img></Box></Box>}
         <Box className='Main'>
           <Box>
             <Box className="T1">Luna Luovula</Box>
@@ -27,9 +49,9 @@ const AboutMe: React.FC = () => {
               intertwined with jazz music.
             </Box>
           </Box>
-          {width>750&&<img src={Photo}></img>}
+          {width > 750 && <img src={Photo}></img>}
         </Box>
-       
+
         <br />
         <Accordion defaultExpanded className="Accordion">
           <AccordionSummary
@@ -43,15 +65,15 @@ const AboutMe: React.FC = () => {
           <AccordionDetails>
             <Box className="Content">
               Luna's tap dance journey is a tapestry woven with the wisdom of
-              legends and diverse educational experiences: 
+              legends and diverse educational experiences:
             </Box>
             <br />
             <Box className="T3">Protege of Reggio "The Hoofer" McLaughlin:</Box>
             <Box className="Content">
-            When only 14 years old, Luna had the privilege of travelling to Chicago and learning from
-            Reggio, a legendary figure in the world of tap. Under his
-            mentorship, she delved deep into the art's rich history and
-            traditions such as the basic steps and routines of The Copasetics.
+              When only 14 years old, Luna had the privilege of travelling to Chicago and learning from
+              Reggio, a legendary figure in the world of tap. Under his
+              mentorship, she delved deep into the art's rich history and
+              traditions such as the basic steps and routines of The Copasetics.
             </Box>
             <br />
             <Box className="T3">Barcelona Professional Training:</Box>
@@ -67,7 +89,7 @@ const AboutMe: React.FC = () => {
               While in Barcelona, Luna also studied tap dance at the famous Jimmy Slyde Institute,
               taught by Roxane Butterfly. The spiritual environment and vast library of Jimmy Slyde Institute, rich in footage and history
               of tap dance allowed Luna to explore her own identity and expression in a culturally aware context.
-            </Box>  
+            </Box>
             <br />
             <Box className="T3"> Music department at Helsinki University of Arts Sibelius Academy: </Box>
             <Box className="Content">
@@ -93,9 +115,9 @@ const AboutMe: React.FC = () => {
             <Box className="T3">Performing with Tap Radio: </Box>
             <Box className="Content">
               Luna's rhythmic journey has also seen her perform with Tap Radio
-              all around Taiwan, captivating audiences with her tap dancing skills and onstage charisma. 
+              all around Taiwan, captivating audiences with her tap dancing skills and onstage charisma.
             </Box>
-            <br />  
+            <br />
             <Box className="T3"> Tap dance studies in improvisation: </Box>
             <Box className="Content">
               Training at Broadway
@@ -223,11 +245,19 @@ const AboutMe: React.FC = () => {
             </Box>
           </AccordionDetails>
         </Accordion>
-        <Box className='Centered'>
-          <Button className="Portfolio">Click to see the full Portfolio</Button>
+        {/* "See Full Portfolio" Button */}
+        <Box className='Centered' mt={4}>
+          <Button
+            className="Portfolio"
+            onClick={handlePortfolioClick}
+            disabled={loading}
+            variant="contained"
+          >
+            {loading ? <CircularProgress size={24} color="inherit" /> : 'Click to see the full Portfolio'}
+          </Button>
         </Box>
       </Box>
-     
+
       <Footer />
     </Box>
   );

@@ -2,58 +2,66 @@
   @include Page;
 
   .Intro {
-    padding-top: 20px;
     width: 70%;
     max-width: 750px;
     min-width: 350px;
     background-color: $light-gold;
-    padding: 0 20px;
+    padding: 40px 20px;
     padding-bottom: 20px;
     box-sizing: border-box;
-    .SinglePic{
-      margin-top: 50px;
+
+    .SinglePic {
+      margin-top: 30px;
       width: 150px;
       height: 150px;
       border-radius: 50%;
       overflow: hidden;
       background-color: $darker-pastel;
-      img{
+
+      img {
         margin-top: 50px;
         width: 150px;
       }
     }
-    .Main{
+
+    .Main {
       width: 100%;
       display: flex;
       background-color: $light-gold;
       padding: 20px;
+      padding-top: 80px;
       box-sizing: border-box;
 
-      img{
+      img {
         height: 200px;
         margin: 0 20px;
       }
     }
-    .Accordion{
+
+    .Accordion {
       border-radius: 20px;
       margin-bottom: 20px;
     }
+
     .T1 {
       color: $darker-pastel;
       font-size: 36px;
       font-weight: 600;
     }
+
     .ST {
       color: $primary-pastel;
       font-size: 22px;
       font-weight: 600;
       margin-top: -10px;
     }
+
     .T2 {
       color: $primary-pastel;
       font-size: 25px;
       font-weight: 600;
     }
+
     .T3 {
       color: $primary-pastel;
       font-size: 20px;

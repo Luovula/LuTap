@@ -1,9 +1,7 @@
-// firebase-config.ts
-
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
 
-// Replace these with your Firebase project settings
 const firebaseConfig = {
     apiKey: "AIzaSyCkFntmSt6KXXiSEQ7snwlbckA6amLqqno",
     authDomain: "lutap-cd065.firebaseapp.com",
@@ -16,5 +14,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-// Initialize Firestore
 export const db = getFirestore(app);
+
+export const storage = getStorage(app);
