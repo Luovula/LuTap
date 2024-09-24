@@ -26,9 +26,7 @@
       font-family: "Abhaya Libre", serif;
 
       &.SmallerScreen{
-        right: calc(50% - 125px);
-        bottom: 70px;
-        width: 250px;
+       display: none;
       }
     }
   }
